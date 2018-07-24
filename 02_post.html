@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+        function f() {
+        let rnd =Math.floor(Math.random()*249);
+            fetch("https://restcountries.eu/rest/v2/all?fields=name")
+                .then(r1 => { return r1.json(); })
+                .then(r2=>{
+                    fetch(`https://restcountries.eu/rest/v2/name/${r2[rnd].name}`)
+
+                        .then(r3=>{return r3.json();})
+                        .then(r4=>{ document.getElementById("t").innerText=JSON.stringify(r4);
+                           
+                        })}) 
+        }
+    </script>
+    
+</head>
+<body>
+
+<button onclick ="f()" style="">
+  click </button>
+  <p id="t"></p>
+</body>
+</html>
