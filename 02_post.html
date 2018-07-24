@@ -21,6 +21,8 @@
 <body>
 <style>
   .button {
+    position: relative;
+    left: 50%;
     background-color:darksalmon;
     border: none;
     color: white;
@@ -29,19 +31,22 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 5px;
  
 }
 .button:hover {
     background-color:darkgreen;
     color: white;
 }
-.p
+p
 {
- color: grey;
+ margin: 30px;
 }
+
 </style>
 <button class="button" onclick ="f()" >
   click </button>
+  <hr/>
   <p id="t"></p>
 </body>
 </html>
