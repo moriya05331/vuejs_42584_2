@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+                a {
+                    background-color: #9cace0;
+                    color: white;
+                    padding: 14px 25px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    border-radius: 10px;
+                   
+                }
+        </style>
+    </head>
+
+    <body>
+        <h1>
+            hello to our project:
+        </h1>
+        <div id="one">
+            <a :href="link1">{{ btn1 }}</a> <br><br><br>
+            <a :href="link2">{{ btn2 }}</a> 
+        </div>
+
+        <script>
+            new Vue(
+            {
+                el: '#one',
+                data: 
+                {
+                    btn1: 'go to list',
+                    btn2: 'add item',
+                    link1:'list.html',
+                    link2:'add.html'
+                }
+            });
+
+        </script>
+
+    </body>
+
+</html>

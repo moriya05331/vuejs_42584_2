@@ -1,0 +1,72 @@
+
+</html>‏
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+            button {
+                background-color: #9cace0;
+                color: white;
+                padding: 14px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                border-radius: 10px;
+               
+            }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label>select date and time:</label>
+        <br> <br>
+        <input type="datetime-local" id="date">
+        <br> <br>
+        <label>content:</label>
+        <br> <br>
+        <input type="text" id="content" placeholder="name of task">
+        <br> <br>
+        <div id="add1">
+            <button @click="save_me"> {{save}} </button>
+        </div>
+
+    </form>
+
+
+
+<script>
+    new Vue(
+    {
+        el: '#add1',
+        data: 
+        {
+        save: 'save_me'
+        },
+        methods:
+        {
+            save_me: function ()
+            {
+                let task =
+                {
+                    date: document.getElementById("date").value,
+                    content: document.getElementById("content").value
+                };
+
+                sessionStorage.setItem("task", JSON.stringify(task));
+
+                let tesk = localStorage.getItem("ourTask");
+                tesk = (tesk) ? JSON.parse(tesk) : [];
+                tesk.push(task);
+                localStorage.setItem("ourTask", JSON.stringify(tesk));
+            }
+        }
+
+    });
+
+</script>
+</body>
+
+</html>
